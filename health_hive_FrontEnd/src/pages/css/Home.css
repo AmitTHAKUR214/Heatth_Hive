@@ -1,0 +1,50 @@
+.home-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 320px;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Sidebar */
+.home-left {
+  min-width: 0;
+}
+
+/* Center feed */
+.home-center {
+  /* margin-top: -20px; */
+  min-width: 0;
+}
+
+/* Right sidebar */
+.home-right {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+/* Hide right sidebar on smaller screens */
+@media (max-width: 1200px) {
+  .home-layout {
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+  }
+
+  .home-right {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .home-left {
+    display: none;
+  }
+}

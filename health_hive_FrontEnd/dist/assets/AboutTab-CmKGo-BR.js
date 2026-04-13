@@ -1,0 +1,1 @@
+import{j as e}from"./index-JG42xw3k.js";function a({space:s}){return e.jsxs(e.Fragment,{children:[e.jsx("h3",{children:"About this space"}),e.jsx("p",{children:s.description||"This is where space details, rules, and admin-managed content will appear."})]})}export{a as default};

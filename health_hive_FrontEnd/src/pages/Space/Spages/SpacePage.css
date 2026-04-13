@@ -1,0 +1,142 @@
+ .space-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+
+/* Centered content but wide */
+.space-header,
+.space-tabs,
+.space-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.space-banner {
+  width: 100%;
+  height: 220px;
+  background: #ddd;
+  overflow: hidden;
+}
+
+.space-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.space-banner-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+}
+
+.space-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.space-icon {
+  font-size: 48px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.space-info h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.space-info p {
+  margin: 6px 0;
+  color: #555;
+}
+.space-creator {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.creator-label {
+  text-decoration: underline;
+  margin-right: 6px;
+}
+
+.creator-name {
+  font-weight: 600;
+  color: var(--color-g);
+}
+
+.creator-username {
+  margin-left: 6px;
+  color: #6b7280;
+}
+
+.space-meta {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e5f0ff;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+.badge.secondary {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.space-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.space-actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.space-actions button:hover {
+  background: #f3f4f6;
+}
+
+.space-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-top: 16px;
+}
+
+.space-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+}
+
+.space-tabs button.active {
+  color: var(--color-g);
+  border-bottom: 2px solid #111;
+}
+
+.space-content {
+  padding: 1.5rem;
+}

@@ -1,0 +1,190 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.Main_content {
+  min-height: 100vh;
+}
+.spaces-page {
+  max-width: 1800px;
+  margin: 0 auto;           /* horizontal centering */
+  padding: 20px 24px;
+  background: var(--bg-color-dark);
+  color: var(--color);
+}
+
+.spaces-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.spaces-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(320px, 100%), 1fr)
+  );
+  gap: 14px;
+}
+
+
+/* =========================
+   SPACE CARD
+========================= */
+
+.spaces-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 10px;
+  transition: background 0.4s ease, border 0.2s ease;
+}
+
+.spaces-card:hover {
+  background: var(--border-color);
+  border-color: var(--border-color);
+}
+
+/* =========================
+   LEFT ICON
+========================= */
+
+.spaces-card-left {
+  flex-shrink: 0;
+}
+
+.spaces-card-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--card-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.spaces-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.spaces-card-title {
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color);
+  margin-bottom: 4px;
+}
+.spaces-card-title:hover{
+  color: var(--color-gd);
+}
+.spaces-card-meta {
+  display: block;
+  font-size: 12px;
+  color: var(--color-2);
+  margin-bottom: 6px;
+}
+
+.spaces-card-description {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-2);
+  max-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+
+.spaces-card-action {
+  display: flex;
+  align-items: center;
+}
+
+.spaces-join-btn {
+  background: var(--color-g);
+  border: none;
+  outline: none;
+  color: var(--color);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.spaces-join-btn:hover {
+  background: var(--color-gd);
+}
+
+/* =========================
+   SKELETON LOADER
+========================= */
+
+.spaces-skeleton {
+  pointer-events: none;
+}
+
+.skeleton-box {
+  background: linear-gradient(
+    90deg,
+    var(--card-bg) 25%,
+    var(--border-color) 37%,
+    var(--card-bg) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+.spaces-skeleton .spaces-card-icon {
+  background: var(--bg-color);
+}
+
+.spaces-skeleton .spaces-card-title {
+  height: 14px;
+  width: 70%;
+  margin-bottom: 6px;
+}
+
+.spaces-skeleton .spaces-card-meta {
+  height: 12px;
+  width: 50%;
+  margin-bottom: 8px;
+}
+
+.spaces-skeleton .spaces-card-button {
+  height: 26px;
+  width: 64px;
+  border-radius: 999px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

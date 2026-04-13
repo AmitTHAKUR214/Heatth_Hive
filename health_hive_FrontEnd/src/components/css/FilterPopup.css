@@ -1,0 +1,239 @@
+/* =========================
+   OVERLAY
+   ========================= */
+
+.Search_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* =========================
+   POPUP CONTAINER
+   ========================= */
+
+.popup {
+  width: 360px;
+  background: var(--bg-color);
+  border-radius: 14px;
+  padding: 1.5rem;
+  position: relative;
+  animation: popupIn 0.25s ease;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   CLOSE BUTTON
+   ========================= */
+
+.closeBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--color);
+}
+
+/* =========================
+   TOGGLE (LOGIN / SIGNUP STYLE)
+   ========================= */
+
+.popupToggle {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid var(--color-3);
+  margin-bottom: 1.2rem;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--color-3);
+  transition: color 0.25s ease;
+}
+
+.toggleBtn.active {
+  color: var(--color-g);
+  font-weight: 600;
+}
+.toggleBtn:hover{
+  color: var(--color-g);
+}
+/* ACTIVE INDICATOR LINE */
+.popupToggle::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: var(--color-g);
+  transition: transform 0.3s ease;
+}
+
+.popupToggle:has(.toggleBtn.active:nth-child(2))::after {
+  transform: translateX(100%);
+}
+
+/* =========================
+   CONTENT AREA
+   ========================= */
+
+.popupContent {
+  animation: contentFade 0.25s ease;
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FORM ELEMENTS (CLEAN)
+   ========================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.inputWrapper {
+  max-width: 340px;
+  width: 100%;
+}
+.input {
+  max-width: 364px;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  max-height: 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.input:focus {
+  border-color: var(--color-g);
+}
+/* Wrapper */
+.suggestionList {
+  position: absolute;
+  margin-top: -16px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  background: var(--bg-color);
+  border: 1px solid var(--color-3);
+  border-radius: 8px;
+
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 100;
+
+  padding-left: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeSlideIn 0.2s ease;
+}
+
+/* Individual suggestion */
+.suggestionItem {
+  display: block;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color);
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Hover effect */
+.suggestionItem:hover {
+  color: var(--color-g);
+  padding-left: 18px;
+}
+
+/* Divider */
+.suggestionList hr {
+  border: none; 
+  height: 1px;
+  background: var(--color-3);
+  margin: 0 10px;
+}
+
+/* Loading state */
+.loadingItem {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-3);
+  font-style: italic;
+}
+
+/* Smooth appearance */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.buttonPrimary ,.buttonSecondary{
+  background: var(--color-g);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.buttonSecondary {
+  background: var(--color-red);
+}
+.buttonPrimary:hover {
+  background: var(--color-gd);
+}
+.buttonRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}

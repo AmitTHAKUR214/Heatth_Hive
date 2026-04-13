@@ -1,0 +1,316 @@
+/* PharmacyFinder.css — uses project CSS variables */
+
+.pf-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.pf-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color);
+  margin: 0 0 4px;
+}
+
+.pf-sub {
+  font-size: 14px;
+  color: var(--color-3);
+  margin: 0 0 24px;
+}
+
+/* ── Search Panel ── */
+.pf-search-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pf-location-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.pf-input-wrap {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--bg-color);
+  gap: 8px;
+}
+.pf-input-wrap:focus-within { border-color: var(--color-g); }
+
+.pf-input-icon { font-size: 16px; flex-shrink: 0; }
+
+.pf-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 11px 0;
+  font-size: 14px;
+  color: var(--color);
+  outline: none;
+}
+.pf-input::placeholder { color: var(--color-3); }
+.pf-input-spinner { font-size: 13px; flex-shrink: 0; }
+
+.pf-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  z-index: 100;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.pf-sugg-item {
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--color);
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.1s;
+}
+.pf-sugg-item:last-child { border-bottom: none; }
+.pf-sugg-item:hover { background: var(--bg-color-dark); }
+.pf-sugg-pin { flex-shrink: 0; }
+
+/* resolved chip */
+.pf-resolved {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37, 235, 96, 0.1);
+  border: 1.5px solid var(--color-g);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-g);
+  min-width: 0;
+}
+.pf-resolved-label {
+  flex: 1; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.pf-clear-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--color-g); font-size: 14px; flex-shrink: 0; padding: 0; opacity: 0.7;
+}
+.pf-clear-btn:hover { opacity: 1; }
+
+/* GPS button */
+.pf-gps-btn {
+  padding: 11px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--color);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.pf-gps-btn:hover { background: var(--bg-color-dark); }
+.pf-gps-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* controls row */
+.pf-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pf-radius-label { font-size: 13px; font-weight: 600; color: var(--color-3); }
+.pf-radius-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pf-radius-btn {
+  padding: 6px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-2);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.pf-radius-btn:hover { background: var(--bg-color-dark); }
+.pf-radius-btn.active {
+  background: var(--color-g);
+  border-color: var(--color-g);
+  color: #000;
+}
+
+.pf-search-btn {
+  margin-left: auto;
+  padding: 10px 24px;
+  background: var(--color-g);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.pf-search-btn:hover:not(:disabled) { background: var(--color-gd); }
+.pf-search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pf-error { font-size: 13px; color: var(--color-red); margin: 0; }
+
+/* ── Skeletons ── */
+.pf-loading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.pf-skeleton {
+  height: 180px;
+  background: linear-gradient(90deg, var(--border-color) 25%, var(--bg-color) 50%, var(--border-color) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 14px;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Results ── */
+.pf-results-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+}
+.pf-results-count { font-size: 14px; font-weight: 700; color: var(--color); }
+.pf-results-area  { font-size: 13px; color: var(--color-3); }
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ── Pharmacy Card ── */
+.pf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pf-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-g);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.pf-card-top { display: flex; gap: 12px; align-items: flex-start; }
+.pf-card-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  background: rgba(37, 235, 96, 0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.pf-card-info { flex: 1; min-width: 0; }
+.pf-card-name {
+  font-size: 15px; font-weight: 700; color: var(--color);
+  margin: 0 0 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pf-card-address {
+  font-size: 12px; color: var(--color-3); margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.pf-card-verified {
+  font-size: 11px;
+  background: rgba(37,235,96,0.12);
+  color: var(--color-g);
+  padding: 3px 8px; border-radius: 20px; font-weight: 600; flex-shrink: 0;
+}
+
+.pf-card-stats { display: flex; gap: 8px; flex-wrap: wrap; }
+.pf-stat {
+  flex: 1; min-width: 58px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.pf-stat strong { font-size: 16px; font-weight: 800; color: var(--color); }
+.pf-stat span   { font-size: 10px; color: var(--color-3); font-weight: 500; }
+.pf-stat-warn strong { color: #f59e0b; }
+
+.pf-card-phone { font-size: 12px; color: var(--color-3); margin: 0; }
+
+.pf-card-footer { display: flex; gap: 8px; margin-top: auto; }
+
+.pf-view-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-2);
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: background 0.15s;
+}
+.pf-view-btn:hover { background: var(--bg-color-dark); }
+
+.pf-sub-btn {
+  padding: 8px 14px;
+  border: 1.5px solid var(--color-g);
+  border-radius: 8px;
+  background: var(--color-g);
+  color: #000;
+  font-size: 12px; font-weight: 700; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.pf-sub-btn.subscribed {
+  background: transparent;
+  color: var(--color-g);
+}
+.pf-sub-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Empty / Landing ── */
+.pf-empty, .pf-landing {
+  text-align: center; padding: 60px 20px; color: var(--color-3);
+}
+.pf-landing-icon { font-size: 56px; margin-bottom: 12px; }
+.pf-landing-text { font-size: 15px; }
+
+@media (max-width: 600px) {
+  .pf-grid { grid-template-columns: 1fr; }
+  .pf-controls-row { flex-direction: column; align-items: flex-start; }
+  .pf-search-btn { margin-left: 0; width: 100%; }
+}

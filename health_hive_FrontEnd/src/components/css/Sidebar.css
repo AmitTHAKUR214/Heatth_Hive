@@ -1,0 +1,253 @@
+.sidebar {
+  position: sticky;
+  top: 48px; /* navbar height */
+  height: calc(100vh - 62px);
+  width: 260px;
+  margin-top: -10px;
+  background-color: var(--bg-color);
+  align-items: center;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: width 0.2s ease;
+  overflow-x: hidden;
+
+}
+.sidebar.collapsed {
+  width: 80px;
+}
+.Hh-Title {
+  position: absolute;
+  left: 20px;
+  color: var(--color-g);
+  cursor: pointer;
+
+  /* animation base */
+  transition: 
+    transform 0.35s ease,
+    opacity 0.25s ease;
+
+  white-space: nowrap;
+}
+
+/* Sidebar collapsed */
+.Hh-Title.collapsed {
+  opacity: 0;
+  transform: translateX(-22px);
+  pointer-events: none;
+}
+
+/* Sidebar expanded */
+.Hh-Title.expanded {
+  opacity: 1;
+  transform: translateX(1);
+  transition: 0.5s;
+}
+
+.sidebar-toggle-section {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-width: 200px;
+  border-bottom: 1px solid var(--color);
+  margin-bottom: 20px;
+  transition: 4s ease-in-out;
+}
+.sidebar-toggle {
+  transform: scale(3,3);
+  margin-right: 16px;
+  color: var(--color-g);
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: right;
+}
+.icon {
+  transform: scale(1.4,1.4);
+  min-width: 24px;
+  padding: 4px;
+  text-align: center;
+}
+.sidebar-main {
+  flex: 1;                 /* takes remaining space */
+  overflow-y: auto;        /* scroll only this */
+  padding-right: 4px;  
+}
+/* Create Space Button */
+.create-space-btn {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.create-space-btn:hover {
+  background-color: var(--color-gd);
+  /* color: var(--hover-color); */
+}
+
+/* Spaces Section */
+.spaces-section {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.spaces-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Loading */
+.loading {
+  font-size: 13px;
+  color: var(--color);
+  padding: 8px;
+}
+
+/* Spaces list */
+.spaces-list {
+  display: flex;
+  max-width: 1200px;
+  height: fit-content;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.space-link {
+  text-decoration: none;
+  color: var(--color);
+}
+
+/* Space item */
+.sidebar-space-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sidebar-space-item:hover {
+  background-color: var(--border-color);
+  color: var(--color);
+  .sidebar-space-icon {
+    background: var(--border-color);
+    color: var(--color);
+  }
+}
+
+.sidebar-space-icon {
+  transform: scale(1.4,1.4);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.sidebar-space-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+.Ex-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.Ex-more-link {
+  background: var(--color-g);
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--bg-color);
+  margin-bottom: 20px;
+}
+.Ex-more-link:hover {
+  background: var(--color-gd);
+}
+/* Footer */
+.sidebar-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--color-3);
+  border-top: 1px solid var(--color);
+  /* key */
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap :4px;
+  line-height: 1.6;
+}
+.sidebar-footer.collapsed {
+  width: 100%;
+}
+.sidebar-footer a {
+  color: var(--color-3);
+  text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+  text-decoration: underline;
+  color: var(--color);
+}
+
+
+/* ===== Sidebar Skeleton ========================== */
+
+.space-skeleton {
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 6px;
+  margin-bottom: 6px;
+}
+
+.space-skeleton-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--card-bg);
+}
+
+.space-skeleton-text {
+  height: 14px;
+  width: 120px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--card-bg) 25%,
+    var(--color-3) 37%,
+    var(--card-bg) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}

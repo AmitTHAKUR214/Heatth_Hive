@@ -1,0 +1,133 @@
+.sr-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.sr-tab {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: none;
+  color: var(--color-muted, #94a3b8);
+  transition: all 0.12s;
+}
+.sr-tab.active {
+  background: var(--color-primary, #3b82f6);
+  border-color: var(--color-primary, #3b82f6);
+  color: white;
+}
+
+.sr-section { margin-bottom: 32px; }
+
+.sr-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* User card grid */
+.sr-user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.sr-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--card-bg, white);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.sr-user-card:hover {
+  border-color: var(--color-primary, #3b82f6);
+  transform: translateY(-1px);
+}
+
+.sr-user-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.sr-user-avatar img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.sr-user-avatar span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sr-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.sr-user-top {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.sr-user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sr-user-username {
+  font-size: 12px;
+  color: var(--color-muted, #94a3b8);
+}
+
+.sr-user-meta {
+  font-size: 12px;
+  color: var(--color-muted, #94a3b8);
+}
+
+.sr-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.sr-available {
+  font-size: 11px;
+  font-weight: 600;
+  color: #16a34a;
+}

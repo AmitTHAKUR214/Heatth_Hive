@@ -1,0 +1,494 @@
+.comment-item {
+  position: relative;          /* for positioning menu */
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;      /* stack header, body, actions vertically */
+  gap: 8px;
+  padding: 8px;
+  transition: 0.5s;
+  /* background: var(--border-color); */
+}
+/* ===============================
+   COMMENTS POPUP OVERLAY (UNCHANGED)
+================================ */
+.comments-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   COMMENTS POPUP CONTAINER
+================================ */
+.comments-popup {
+  width: 100%;
+  max-width: 1600px;
+  max-height: 85vh;
+  background: var(--bg-color);
+  color: var(--color);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.5);
+  animation: popupScaleIn 0.5s ease-in-out;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  transition: 0.5s;
+}
+
+/* ===============================
+   POPUP HEADER
+================================ */
+.comments-popup-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+/* =============== avatar ============== */
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.comment-avatar i {
+  font-size: 16px;
+  color: #aaa;
+}
+/* =================== avatar ================= */
+.comments-popup-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.comments-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-3);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.5s ease, transform 0.1s ease;
+}
+
+.comments-close-btn:hover {
+  color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+/* ===============================
+   POPUP BODY
+================================ */
+.comments-popup-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  gap: 12px;
+}
+
+/* ===============================
+   COMMENTS SCROLL AREA
+================================ */
+.comments-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px;
+}
+
+.comments-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-scroll-area::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+/* ===============================
+   COMMENT INPUT BAR
+================================ */
+.comments-input-bar {
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+}
+
+.comments-input-bar form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.comments-input-bar input {
+  flex: 1;
+  height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  background: none;
+  color: var(--color);
+  outline: none;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.comments-input-bar input::placeholder {
+  color: var(--color-3);
+}
+
+.comments-input-bar input:focus {
+  border-color: var(--color-g);
+}
+
+.comments-input-bar button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--color-g);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.comments-input-bar button:hover {
+  background: var(--color-gd);
+}
+
+.comments-input-bar button:active {
+  transform: scale(0.96);
+}
+
+/* ===============================
+   LOGIN HINT
+================================ */
+.comment-login-hint {
+  font-size: 13px;
+  color: var(--color-3);
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.comment-login-hint:hover {
+  color: var(--color-g);
+  text-decoration: underline;
+}
+
+/* ===============================
+   COMMENT ITEM
+================================ */
+
+
+
+.comment-avatar img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-body {
+  flex: 1;
+  background: var(--bg-soft);
+  margin-top: 4px;
+  padding: 6px 0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between; /* author left, menu right */
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.comment-header .edit-btn{
+  background: #000;
+}
+
+/* ===============================
+   COMMENT DROPDOWN MENU
+================================ */
+.comment-menu {
+  background: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.comment-menu i {
+  font-size: 16px;
+  color: var(--color-3);
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.comment-menu i:hover {
+  background: var(--color-3);
+  color: var(--color);
+}
+
+/* Dropdown styling */
+.comment-dropdown,.comment-dropdown-reply {
+  position: absolute;
+  top: 24px;  
+  right: 0;
+  background: var(--bg-color);
+  border-radius: 8px;
+  min-width: 80px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.Comment-edit-input-btn {
+  border-bottom: 1px solid var(--color-g);
+  background: none;
+  color: var(--color);
+  outline: none;
+}
+.Comment-edit-btn,
+.Comment-delete-btn,
+.comment-reply-btn,
+.Comment-save-btn,
+.Comment-cancle-btn {
+  all: unset;                 /* remove default button styles */
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.Comment-edit-btn:hover {
+  background: var(--color-g);
+}
+
+.Comment-delete-btn:hover {
+  background: var(--color-red);
+}
+.comment-reply-btn:hover {
+  background: var(--color-g);
+}
+.comment-actions,
+.comment-reply-toggle-btn {
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+}
+/* Screen-reader only text */
+
+
+
+/* =========================
+   COMMENT ACTIONS (Reply / View 
+========================== */
+.comment-actions button,
+.cmt-reply-toggle-btn {
+  transform: scale(1.2,1.2);
+  all: unset;                 /* remove default button styles */
+  cursor: pointer;
+  font-size: 0.9rem;
+  background: none;
+  padding: 4px;
+  color: var(--color-gd);
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.comment-actions button:hover,
+.cmt-reply-toggle-btn:hover {
+  color: var(--color-gd);
+  text-decoration: underline;
+}
+/* ===============================
+   EDIT COMMENT
+================================ */
+.comment-edit {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.comment-edit input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.comment-edit button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+
+/* =========================
+   REPLY BOX
+========================= */
+.comment-reply-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.comment-reply-box input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--color-3);
+  outline: none;
+  background: none;
+  color: var(--color);
+  outline: none;
+  font-size: 14px;
+}
+
+.comment-reply-box button {
+  all: unset;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--color-g);
+  color: #000;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.comment-reply-box button:hover {
+  background: var(--color-gd);
+}
+.comment-view-replies {
+ display: flex;
+ flex-direction: row;
+ gap: 2px; 
+  transition: 0.5s;
+}
+/* ============================================= */
+.comment-replies {
+  margin-top: 8px;
+  margin-left: 20px;
+  border-left: 2px solid var(--border-color);
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: 0.5s;
+}
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes popupScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 640px) {
+  .comments-popup {
+    max-height: 92vh;
+    border-radius: 12px;
+  }
+
+  .comments-popup-header h3 {
+    font-size: 16px;
+  }
+
+  .comments-input-bar input {
+    font-size: 13px;
+  }
+
+  .comment-item {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .cmt-replies-container {
+    margin-left: 30px;
+    padding-left: 12px;
+  }
+}
+/* ===================================== reply thread for user profile replies ======================= */
+.reply-thread {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.reply-with-line {
+  position: relative;
+  /* margin-left: 20px; */
+}
+
+/* Vertical line */
+.reply-with-line::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: -67%;
+  width: 2px;
+  height: 64%;
+  background-color: var(--color-3);
+}
+
+/* Horizontal line */
+.reply-with-line::after {
+  content: "";
+  /* position: absolute; */
+  left: -20px;
+  /* top: 18px; adjust based on avatar height */
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-3);
+}

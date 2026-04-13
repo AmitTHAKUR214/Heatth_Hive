@@ -1,0 +1,239 @@
+/* --- Page Container --- */
+.post-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  font-family: 'Inter', sans-serif;
+  color: var(--color);
+}
+
+/* --- Poster Info --- */
+.post-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.post-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.post-avatar.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background-color: var(--border-color);
+  color: var(--color-3);
+}
+
+.post-header div {
+  flex: 1;
+}
+
+.post-header a {
+  font-weight: 600;
+  color: var(--color-g);
+  text-decoration: none;
+}
+
+.post-header a:hover {
+  text-decoration: underline;
+  color: var(--hover-color);
+}
+
+.post-header h1 {
+  margin: 6px 0;
+  font-size: 26px;
+  color: var(--color);
+}
+
+.post-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-2);
+}
+
+/* --- Time / Tags --- */
+.post-meta {
+  font-size: 13px;
+  color: var(--color-3);
+  margin-bottom: 16px;
+}
+
+.post-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.post-tags span {
+  background-color: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--color-2);
+}
+
+/* --- Images Container --- */
+.post-images-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding: 10px 0;
+}
+
+.post-images-container.dragging {
+  cursor: grabbing;
+}
+
+.post-image {
+  flex: 0 0 auto;
+  max-height: 300px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.post-image:hover {
+  transform: scale(1.05);
+}
+.post-images-container img {
+  height: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-images-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* --- Action Buttons --- */
+.post-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+.post-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  color: var(--color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.post-actions button:hover {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+.post-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* --- Comments Section --- */
+.post-comments {
+  margin-top: 32px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+}
+
+.post-comments h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--color);
+}
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-user {
+  font-weight: 600;
+  color: var(--color-g);
+}
+
+.comment-text {
+  font-size: 14px;
+  color: var(--color-2);
+  margin-top: 2px;
+}
+
+.comment-actions {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-3);
+  display: flex;
+  gap: 12px;
+}
+
+/* --- Scrollbar Styling --- */
+.post-images-container::-webkit-scrollbar {
+  height: 6px;
+}
+.post-images-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-3);
+  border-radius: 3px;
+}
+.post-images-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .post-page {
+    margin: 20px;
+    padding: 16px;
+  }
+
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .post-images-container img {
+    height: 220px;
+  }
+}

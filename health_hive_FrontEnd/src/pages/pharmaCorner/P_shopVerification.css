@@ -1,0 +1,116 @@
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.page h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.doc-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* GRID ROWS */
+.form-row {
+  display: grid;
+  gap: 16px;
+}
+
+.form-row.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-row.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* INPUT STYLING */
+.doc-upload input,
+.doc-upload select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.2s ease;
+}
+
+.doc-upload input:focus,
+.doc-upload select:focus {
+  outline: none;
+  border-color: var(--color-g);
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 150, 90, 0.1);
+}
+
+/* FILE INPUT */
+.doc-upload input[type="file"] {
+  padding: 8px;
+  background: #fff;
+}
+
+/* LOCATION BUTTON */
+.location-btn {
+  background: #f4f6f8;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.location-btn:hover {
+  background: #e9ecef;
+}
+
+/* SUBMIT BUTTON */
+.doc-upload button.submit-btn {
+  align-self: flex-end;
+  background: var(--color-g);
+  color: var(--bg-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.doc-upload button.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.doc-upload button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}

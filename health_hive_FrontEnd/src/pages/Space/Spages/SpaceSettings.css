@@ -1,0 +1,156 @@
+/* ================================
+   SPACE EDITOR – MAIN LAYOUT
+================================ */
+.space-editor-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+.space-editor-layout section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 12px;
+    max-width: 1800px;
+    width: 100%;
+}
+/* ================================
+   LEFT PANEL – SPACE SETTINGS
+================================ */
+.space-settings {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 1000px;
+  overflow-y: auto;
+}
+
+.space-settings h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* ================================
+   FORM ELEMENTS
+================================ */
+.space-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.space-settings input,
+.space-settings textarea,
+.space-settings select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.space-settings input:focus,
+.space-settings textarea:focus,
+.space-settings select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  background: #ffffff;
+}
+
+.space-settings textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ================================
+   SAVE BUTTON
+================================ */
+.space-settings button {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #6366f1;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.space-settings button:hover {
+  background: #4f46e5;
+}
+
+.space-settings button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   THEME EDITOR
+================================ */
+.theme-editor {
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px dashed #d1d5db;
+}
+
+.theme-editor h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.color-row {
+  display: grid;
+  grid-template-columns: 90px 48px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.color-row label {
+  color: var(--color-3);
+}
+
+.color-row input[type="color"] {
+  width: 44px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.color-row input[type="text"] {
+    width: 120px;
+  font-family: monospace;
+  font-size: 13px;
+  margin-right: 68px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 1200px) {
+  .space-editor-layout section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ 
+}

@@ -1,0 +1,53 @@
+.insights-wrapper {
+  background: var(--bg-color);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  max-width: 1646px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* gap: 2.5rem; */
+}
+.br{
+  background: var(--color);
+  color: var(--color);
+  width: 100%;
+}
+.insight-card {
+  flex: 1;
+  outline: none;
+  border: none;
+  background: none;
+  text-decoration: none;
+  padding-left: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.185)
+}
+
+.insight-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color);
+}
+
+.insight-card ul,
+.insight-card ol {
+  padding-left: 1.2rem;
+  color: var(--color-2);
+}
+
+@media (max-width: 900px) {
+  .insights-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

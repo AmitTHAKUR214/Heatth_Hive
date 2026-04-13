@@ -1,0 +1,94 @@
+/* ================= CSS (profile.css) ================= */
+
+.profile-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  /* object-fit: cover; */
+  border: 1px solid var(--border-color);
+}
+
+.profile-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-size: 20px;
+  color: var(--color);
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: var(--color-2);
+  margin-top: 4px;
+}
+
+.profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-3);
+  margin-top: 6px;
+}
+
+.profile-role {
+  text-transform: capitalize;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.profile-stat-value {
+  font-size: 18px;
+  color: var(--color);
+  font-weight: 600;
+}
+
+.profile-stat-label {
+  font-size: 12px;
+  color: var(--color-3);
+}
+
+.profile-tabs {
+  /* display: flex; */
+  gap: 8px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.profile-tab {
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--color-3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.profile-tab.active {
+  color: var(--color);
+  border-bottom-color: var(--hover-color);
+}

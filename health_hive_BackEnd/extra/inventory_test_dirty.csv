@@ -1,0 +1,14 @@
+medicineName      , brand       , quantity, price , expiry      , extraColumn
+Paracetamol 500mg , CIPLA       , 100     , 2.50  , 2026-06     , ignored
+Ibuprofen         , Sun Pharma  ,         , 5.75  , 2025-12     , 
+Aspirin           , Bayer       , 50      ,       , -01         , 
+Cetrizine         , Dr Reddy's  , 200     , 1.25  , 2027-02     , 
+paracetamol 500mg , Cipla       , 30      , 2.50  , 2026-06     , 
+Amoxicillin       ,             , 100     , 12.5  , 2025-08     , 
+Metformin 500mg   , Sun Pharma  , -20     , 3.00  , 2026-11     , 
+Atorvastatin 10mg , Pfizer      , 40      , abc   , 2026-09     , 
+Vitamin D3        , Abbott      , 60      , 25.00 , 2024-01     , 
+                  , Unknown     , 10      , 1.00  , 2026-05     , 
+Azithromycin 250mg, Cipla       , 75      , 18.00 , 2025-03     , 
+Omeprazole 20mg   , Dr Reddy's  , 100     ,       , 2026-10     , 
+Insulin Human     , Novo Nordisk, 25      , 450.00, invalid-date, 

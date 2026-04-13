@@ -1,0 +1,23 @@
+Medicine Name    , Brand Name       , Qty Available, MRP (₹), Batch No, Expiry , Notes      , Extra Column
+Paracetamol 500mg, Cipla Ltd        ,           120,      25, BT-9921 , 12/2026, Fast moving, 
+PCM 650          , CIPLA            ,            85,      30, BT-9922 , 11/2026,            , 
+Crocin 500       , GlaxoSmithKline  ,           200,      28, BT-7712 , 08/2027, High demand, random text
+Ibuprofen 400 mg , Abbott Pharma    ,            60,      18, BT-5532 , 03/2026,            , 
+Ibu-400          , Abbott           ,              ,      20, BT-5533 , 04/2026, missing qty, 
+Amoxicillin 250mg, Cadila           ,            45,      55, BT-6621 , 09/2025, Antibiotic , 
+Amox 500         , CADILA HEALTHCARE,            30,      90, BT-6622 , 10/2025,            , unexpected
+Azithromycin 500 , Sun Pharma       ,            75,     120, BT-8812 , 05/2026,            , 
+Azee 500         , SUN              ,            50,     115, BT-8813 , 06/2026,            , 
+Cetrizine        , Cipla            ,           300,      10, BT-3311 , 01/2028, OTC        , 
+Cetirizine 10mg  ,                  ,           180,      12, BT-3312 , 02/2028, No brand   , 
+Vitamin C 500mg  , Himalaya         ,            90,      95, BT-1144 , 07/2026, Supplement , 
+Vit C Chewable   , HIMALAYA         ,            70,     100, BT-1145 , 08/2026,            , 
+ORS Powder       , Cipla            ,           500,      20, BT-2211 , 12/2027, High volume, 
+Electral Powder  , FDC Ltd          ,           450,      22, BT-2212 , 11/2027,            , 
+Metformin 500    , Zydus            ,           130,      40, BT-4432 , 10/2026, Diabetes   , 
+Met 500          , ZYDUS CADILA     ,           110,      38, BT-4433 , 11/2026,            , 
+Atorvastatin 10mg, Dr Reddy's       ,            90,      75, BT-7721 , 09/2026, Cholesterol, 
+Atorva 10        , DR REDDYS        ,            65,      70, BT-7722 , 10/2026,            , 
+Pantoprazole 40  , Cipla            ,           150,      85, BT-5511 , 04/2027,            , 
+Pan 40           , CIPLA LTD        ,           140,      80, BT-5512 , 05/2027,            , 
+Dolo 650         , Micro Labs       ,           220,      32, BT-9001 , 01/2027, Fast moving, 

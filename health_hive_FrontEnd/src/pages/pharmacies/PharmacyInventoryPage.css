@@ -1,0 +1,342 @@
+/* PharmacyInventoryPage.css — uses project CSS variables */
+
+.pip-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.pip-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--color-3);
+  font-size: 15px;
+}
+
+.pip-error {
+  font-size: 13px;
+  color: var(--color-red);
+  margin: 0;
+}
+
+/* ── Subscribe gate ── */
+.pip-gate {
+  max-width: 440px;
+  margin: 80px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.pip-gate-icon { font-size: 56px; }
+.pip-gate h2 { font-size: 22px; font-weight: 800; color: var(--color); margin: 0; }
+.pip-gate p  { font-size: 14px; color: var(--color-3); margin: 0; }
+
+.pip-gate-perks {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+}
+.pip-gate-perks span {
+  background: rgba(37,235,96,0.1);
+  color: var(--color-g);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pip-sub-cta {
+  padding: 12px 28px;
+  background: var(--color-g);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.pip-sub-cta:hover:not(:disabled) { background: var(--color-gd); }
+.pip-sub-cta:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.pip-back-link {
+  font-size: 13px; color: var(--color-3); text-decoration: none;
+}
+.pip-back-link:hover { color: var(--color); text-decoration: underline; }
+
+/* ── Header ── */
+.pip-back {
+  display: inline-block;
+  font-size: 13px; color: var(--color-3);
+  text-decoration: none; margin-bottom: 16px;
+}
+.pip-back:hover { color: var(--color); }
+
+.pip-pharmacy-info {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.pip-pharmacy-icon {
+  font-size: 30px;
+  width: 50px; height: 50px;
+  background: rgba(37,235,96,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pip-pharmacy-name {
+  font-size: 20px; font-weight: 800; color: var(--color); margin: 0 0 2px;
+}
+.pip-pharmacy-addr {
+  font-size: 13px; color: var(--color-3); margin: 0 0 2px;
+}
+.pip-verified-badge {
+  margin-left: auto; flex-shrink: 0;
+  background: rgba(37,235,96,0.12);
+  color: var(--color-g);
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+}
+
+/* ── Stats bar ── */
+.pip-stats-bar {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.pip-stat-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  color: var(--color-3);
+}
+.pip-stat-chip strong { color: var(--color); font-weight: 700; margin-right: 4px; }
+.pip-stat-chip.pip-warn strong  { color: #f59e0b; }
+.pip-stat-chip.pip-danger strong { color: var(--color-red); }
+
+/* ── Filters ── */
+.pip-filters {
+  display: flex; gap: 12px; align-items: center;
+  flex-wrap: wrap; margin-bottom: 20px;
+}
+.pip-search {
+  flex: 1; min-width: 200px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 14px;
+  background: var(--bg-color);
+  color: var(--color);
+  outline: none;
+}
+.pip-search:focus { border-color: var(--color-g); }
+.pip-search::placeholder { color: var(--color-3); }
+
+.pip-category-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.pip-cat-btn {
+  padding: 7px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--color-2);
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all 0.15s;
+}
+.pip-cat-btn:hover { background: var(--bg-color-dark); }
+.pip-cat-btn.active {
+  background: var(--color-g);
+  border-color: var(--color-g);
+  color: #000;
+}
+
+/* ── Medicine grid ── */
+.pip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.pip-med-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pip-med-card:hover {
+  border-color: var(--color-g);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.pip-med-card.out-of-stock { opacity: 0.5; }
+
+.pip-med-top { display: flex; gap: 10px; align-items: flex-start; }
+.pip-med-icon { font-size: 22px; flex-shrink: 0; }
+.pip-med-info { flex: 1; min-width: 0; }
+.pip-med-name {
+  font-size: 14px; font-weight: 700; color: var(--color); margin: 0 0 2px;
+}
+.pip-med-brand { font-size: 11px; color: var(--color-3); margin: 0; }
+
+.pip-stock-badge {
+  font-size: 11px; font-weight: 700;
+  padding: 3px 8px; border-radius: 20px; flex-shrink: 0;
+}
+.pip-stock-badge.ok   { background: rgba(37,235,96,0.12); color: var(--color-g); }
+.pip-stock-badge.low  { background: rgba(245,158,11,0.15); color: #f59e0b; }
+.pip-stock-badge.out  { background: rgba(229,72,77,0.15); color: var(--color-red); }
+
+.pip-med-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+.pip-meta-tag {
+  font-size: 11px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--color-3);
+  padding: 2px 8px; border-radius: 6px;
+}
+.pip-price    { color: var(--color-g) !important; border-color: var(--color-g) !important; }
+.pip-expired  { color: var(--color-red) !important; border-color: var(--color-red) !important; }
+
+.pip-med-footer { margin-top: auto; }
+
+.pip-book-btn {
+  width: 100%;
+  padding: 9px;
+  background: var(--color-g);
+  color: #000;
+  border: none; border-radius: 8px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s;
+}
+.pip-book-btn:hover:not(:disabled) { background: var(--color-gd); }
+.pip-book-btn:disabled {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--color-3);
+  cursor: not-allowed;
+}
+
+.pip-booking-chip {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  background: rgba(37,235,96,0.1);
+  border: 1px solid var(--color-g);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px; color: var(--color-g); font-weight: 600;
+}
+.pip-cancel-booking {
+  background: none; border: none; cursor: pointer;
+  font-size: 11px; color: var(--color-red); font-weight: 700;
+  padding: 0; flex-shrink: 0;
+}
+
+.pip-empty {
+  text-align: center; padding: 48px; color: var(--color-3);
+}
+
+/* ── Modal ── */
+.pip-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000; backdrop-filter: blur(3px);
+}
+.pip-modal {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(440px, 92vw);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  z-index: 2001;
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+.pip-modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pip-modal-header h3 { margin: 0; font-size: 18px; font-weight: 800; color: var(--color); }
+.pip-modal-close {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color);
+}
+
+.pip-modal-med {
+  display: flex; gap: 12px; align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px; padding: 12px;
+}
+.pip-modal-med-name { font-size: 15px; font-weight: 700; color: var(--color); margin: 0; }
+
+.pip-modal-info {
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.4);
+  border-radius: 8px; padding: 10px 12px;
+  font-size: 12px; color: #f59e0b;
+}
+
+.pip-modal-label { font-size: 12px; font-weight: 700; color: var(--color-2); }
+
+.pip-qty-row { display: flex; align-items: center; gap: 10px; }
+.pip-qty-row button {
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-bg);
+  font-size: 18px; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color);
+}
+.pip-qty-row button:hover { border-color: var(--color-g); }
+.pip-qty-row > span:first-of-type {
+  font-size: 18px; font-weight: 800; color: var(--color);
+  min-width: 24px; text-align: center;
+}
+.pip-qty-max { font-size: 12px; color: var(--color-3); }
+
+.pip-modal-note {
+  width: 100%; padding: 10px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 13px; resize: vertical; font-family: inherit;
+  color: var(--color); background: var(--card-bg);
+  outline: none; box-sizing: border-box;
+}
+.pip-modal-note:focus { border-color: var(--color-g); }
+.pip-modal-note::placeholder { color: var(--color-3); }
+
+.pip-modal-total {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 14px; color: var(--color-3);
+  padding: 10px 0; border-top: 1px solid var(--border-color);
+}
+.pip-modal-total strong { font-size: 18px; color: var(--color); }
+
+.pip-modal-confirm {
+  width: 100%; padding: 13px;
+  background: var(--color-g); color: #000;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s;
+}
+.pip-modal-confirm:hover:not(:disabled) { background: var(--color-gd); }
+.pip-modal-confirm:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 600px) {
+  .pip-grid { grid-template-columns: 1fr; }
+  .pip-pharmacy-info { flex-wrap: wrap; }
+  .pip-verified-badge { margin-left: 0; }
+}

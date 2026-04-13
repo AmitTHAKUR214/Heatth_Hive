@@ -1,0 +1,215 @@
+/* ================================
+   PREVIEW WRAPPER
+================================ */
+.space-preview-wrapper {
+  position: relative;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+.Section-preview{
+    max-width: 1800px;
+    width: 100%;
+}
+.preview-title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(17, 24, 39, 0.65);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================================
+   SCROLL AREA
+================================ */
+.space-preview-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* ================================
+   PREVIEW CARD
+================================ */
+.space-preview {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   BANNER
+================================ */
+.space-preview-banner {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ================================
+   HEADER
+================================ */
+.space-preview-header {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+}
+
+.space-preview-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+/* ================================
+   INFO
+================================ */
+.space-preview-info h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.space-preview-info p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #4b5563;
+  max-width: 640px;
+}
+
+/* ================================
+   META BADGES
+================================ */
+.space-preview-meta {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.space-preview-meta .badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.space-preview-meta .badge.secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ================================
+   TABS
+================================ */
+.space-preview-tabs {
+  display: flex;
+  gap: 16px;
+  padding: 0 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.space-preview-tabs button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  padding-bottom: 10px;
+}
+
+.space-preview-tabs button.active {
+  color: inherit;
+  border-bottom: 2px solid currentColor;
+}
+
+/* ================================
+   SECTIONS
+================================ */
+.space-preview-section {
+  padding: 24px;
+}
+
+.space-preview-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* ================================
+   POSTS
+================================ */
+.space-preview-post {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  margin-bottom: 12px;
+}
+
+.space-preview-post h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.space-preview-post .post-author {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.space-preview-post p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* ================================
+   MEMBERS
+================================ */
+.space-preview-members {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.space-preview-member {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.space-preview-member .avatar {
+  font-size: 18px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .space-preview-header {
+    flex-direction: column;
+  }
+
+  .space-preview-wrapper {
+    height: auto;
+  }
+}

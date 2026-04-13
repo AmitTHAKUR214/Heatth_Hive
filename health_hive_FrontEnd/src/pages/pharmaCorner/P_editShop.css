@@ -1,0 +1,135 @@
+.edit-shop-page {
+  position: relative;
+  top: 46px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-shop-page .form-group input {
+  width: 96%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.edit-shop-page h2 {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.edit-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: var(--color-2);
+}
+
+.form-group input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color-dark);
+  color: var(--color);
+}
+
+.form-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  margin-top: 0.5rem;
+  align-self: flex-end;
+  background: var(--color-g);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.Link{
+  padding-right: 8px;
+  text-decoration: none;
+  color: var(--color);
+  transform: scale(0.8);
+}
+.Link:hover {
+  color: var(--color-g);
+}
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toast-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* green */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  animation: slideIn 0.3s ease, fadeOut 0.3s ease 1s forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(50px); }
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.confirm-box {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.secondary-btn {
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--color-red);
+}

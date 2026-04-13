@@ -1,0 +1,1 @@
+import{h as t}from"./index-JG42xw3k.js";const e=()=>t.get("/doctor/profile"),c=o=>t.get(`/doctor/public/${o}`),s=o=>t.post("/doctor/profile",o),a=o=>t.post("/doctor/profile/documents",o,{headers:{"Content-Type":"multipart/form-data"}});export{e as a,c as g,s,a as u};

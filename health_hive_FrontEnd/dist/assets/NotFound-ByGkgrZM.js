@@ -1,0 +1,1 @@
+import{j as e,L as o}from"./index-JG42xw3k.js";function t(){return e.jsxs("div",{style:{height:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"12px",color:"var(--color)"},children:[e.jsx("h1",{children:"404"}),e.jsx("p",{children:"Page not found"}),e.jsx(o,{className:"GoHomeLink",to:"/",children:"Go Home"})]})}export{t as default};

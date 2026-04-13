@@ -1,0 +1,366 @@
+/* ================= Page & Header ================= */
+.main_page {
+  width: 100%;
+  max-width: 1800px;
+  margin: 40px auto;
+  padding: 20px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page p {
+  margin-top: 8px;
+  color: var(--color-3);
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.role-badge {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+  padding: 4px 10px;
+  margin-left: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.updated-at {
+  font-size: 13px;
+  color: var(--color-3);
+}
+
+/* ================= Popup ================= */
+.popup {
+  position: sticky;
+  top: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup.info {
+  background-color: #2196f3;
+  color: white;
+}
+
+.popup.success {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+}
+
+.popup.error {
+  background-color: var(--color-red);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================= Search ================= */
+.inventory-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.inventory-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color-dark);
+  color: var(--color);
+  transition: border-color 0.3s;
+}
+
+.inventory-search input::placeholder {
+  color: var(--color-3);
+}
+
+.inventory-search input:focus {
+  outline: none;
+  border-color: var(--color-g);
+}
+
+/* ================= CSV Upload ================= */
+.csv-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.file-label {
+  background-color: var(--color-gd);
+  color: var(--bg-color);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: var(--color-g);
+}
+
+.file-name {
+  font-style: italic;
+  color: var(--color-3);
+}
+
+.csv-upload button {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.csv-upload button:disabled {
+  background-color: var(--color-3);
+  cursor: not-allowed;
+}
+
+.csv-upload button:hover:not(:disabled) {
+  background-color: var(--color-gd);
+}
+
+/* ================= Inventory Table ================= */
+.inventory-table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inventory-header,
+.inventory-row {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 2fr)
+    minmax(160px, 1.5fr)
+    minmax(90px, 1fr)
+    minmax(90px, 1fr)
+    minmax(130px, 1.5fr)
+    auto ;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.inventory-header {
+  font-weight: bold;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--color-2);
+}
+
+.inventory-row {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  padding: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.inventory-row:nth-child(even) {
+  background-color: rgba(255,255,255,0.03);
+}
+
+.inventory-row:hover {
+  transform: translateY(-1px);
+}
+
+.inventory-row input {
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  width: 100%;
+  background: var(--bg-color-dark);
+  color: var(--color);
+}
+
+.inventory-row input:focus {
+  border-color: var(--color-g);
+  outline: none;
+}
+
+/* ================= Row Actions ================= */
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.row-actions button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.15s, background-color 0.2s;
+}
+
+.row-actions button:hover {
+  transform: scale(1.05);
+}
+
+.row-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.row-actions button:nth-child(1) {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+}
+
+.row-actions button.cancel-btn {
+  background-color: #f0ad4e;
+  color: var(--bg-color);
+}
+
+.row-actions button.delete-btn {
+  background-color: var(--color-red);
+  color: white;
+}
+
+/* ================= Inventory Actions ================= */
+.inventory-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.inventory-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.2s;
+}
+
+.inventory-actions button:first-child {
+  background-color: #2196f3;
+  color: var(--bg-color);
+}
+
+.inventory-actions button:last-child {
+  background-color: var(--color-g);
+  color: var(--bg-color);
+}
+
+.inventory-actions button:hover {
+  transform: scale(1.05);
+}
+
+/* ================= Muted Text ================= */
+.muted-text {
+  text-align: center;
+  color: var(--color-3);
+  margin: 15px 0;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+  .inventory-header,
+  .inventory-row {
+    grid-template-columns:
+      minmax(180px, 2fr)
+      minmax(140px, 1.2fr)
+      minmax(70px, 0.8fr)
+      minmax(70px, 0.8fr)
+      minmax(110px, 1fr)
+      minmax(120px, 1fr); 
+    font-size: 0.82rem;
+  }
+
+  .row-actions {
+    gap: 4px;
+  }
+
+  button {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ================= Mobile ================= */
+@media (max-width: 600px) {
+  /* Hide header row */
+  .inventory-header {
+    display: none;
+  }
+
+  /* Stack row content */
+  .inventory-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    gap: 8px;
+  }
+
+  /* Label-value layout for text fields */
+  .inventory-row span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    gap: 10px;
+    word-break: break-word;
+  }
+
+  /* Action buttons — CRITICAL FIX */
+  .row-actions {
+    display: flex;
+    flex-direction: column;   /* stack buttons */
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .row-actions button {
+    width: 100%;              /* prevent overflow */
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .row-actions button {
+    width: 100%;
+  }
+}

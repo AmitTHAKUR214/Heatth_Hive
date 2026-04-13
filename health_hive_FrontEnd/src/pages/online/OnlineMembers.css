@@ -1,0 +1,179 @@
+.om-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Header */
+.om-header { margin-bottom: 28px; }
+
+.om-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 6px;
+}
+
+.om-live-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  animation: om-pulse 2s infinite;
+}
+
+@keyframes om-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.2); }
+}
+
+.om-sub {
+  font-size: 14px;
+  color: var(--color-3);
+  margin: 0;
+}
+
+.om-loading,
+.om-empty {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 14px;
+  color: var(--color-3);
+}
+
+/* Section */
+.om-section { margin-bottom: 32px; }
+
+.om-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.om-role-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  border: 1px solid currentColor;
+}
+
+.om-role-count {
+  font-size: 13px;
+  color: var(--color-3);
+  font-weight: 600;
+}
+
+/* Grid */
+.om-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Card */
+.om-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+  overflow: hidden;
+}
+
+.om-card:hover {
+  border-color: var(--color-2);
+  transform: translateY(-1px);
+}
+
+/* Avatar */
+.om-card-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-2);
+  overflow: visible;
+}
+.om-card-avatar span:first-child {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--hover-color, #0ea5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+.om-card-avatar img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.om-card-avatar .om-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid var(--card-bg);
+}
+
+/* Info */
+.om-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.om-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-card-username {
+  font-size: 12px;
+  color: var(--color-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-verified {
+  font-size: 11px;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.om-card-seen {
+  font-size: 11px;
+  color: var(--color-3);
+}

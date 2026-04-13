@@ -1,0 +1,52 @@
+Good thinking — always smart to have a rollback plan.
+
+Reverting these changes is simple and **safe**, since you're only overriding a user service (not system-wide). Here’s exactly how to **undo everything**:
+
+---
+
+## 🔁 How to Revert to Default OpenTabletDriver Service
+
+### 🧼 1. **Delete your custom override**
+
+```bash
+rm ~/.config/systemd/user/opentabletdriver.service
+```
+
+---
+
+### 🔄 2. **Reload user systemd and re-enable the original**
+
+```bash
+systemctl --user daemon-reload
+systemctl --user disable opentabletdriver.service
+systemctl --user enable opentabletdriver.service
+```
+
+> This reverts it to use the **original service** at `/usr/lib/systemd/user/opentabletdriver.service`, which has the GUI conditions.
+
+---
+
+### 🚫 3. **(Optional) Disable lingering if you no longer want user services to run at boot**
+
+```bash
+sudo loginctl disable-linger $USER
+```
+
+This stops **all user services** (not just OpenTabletDriver) from running in the background after logout.
+
+---
+
+### 🧪 4. **Verify it’s back to default**
+
+Run:
+
+```bash
+systemctl --user cat opentabletdriver.service
+```
+
+It should now show the **default service** again — with the `graphical-session.target` and `ConditionEnvironment` lines.
+
+---
+
+Would you like a script to toggle between the two modes (GUI-only vs always-on)?
+

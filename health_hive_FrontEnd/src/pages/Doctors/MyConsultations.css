@@ -1,0 +1,58 @@
+.mc-page {
+  max-width: 720px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
+
+.mc-header {
+  margin-bottom: 24px;
+}
+
+.mc-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--color);
+}
+
+.mc-sub {
+  font-size: 14px;
+  color: var(--color-muted, #94a3b8);
+  margin: 0 0 20px;
+}
+
+.mc-count {
+  font-size: 10px;
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  border-radius: 10px;
+  padding: 1px 5px;
+  margin-left: 4px;
+}
+
+.mc-empty {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--color-muted, #94a3b8);
+  font-size: 14px;
+}
+
+.mc-doctor-link {
+  color: var(--color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.mc-doctor-link:hover {
+  text-decoration: underline;
+  color: var(--color-primary, #3b82f6);
+}
+
+.mc-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted, #94a3b8);
+  margin-bottom: 4px;
+}

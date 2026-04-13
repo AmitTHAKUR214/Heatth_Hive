@@ -1,0 +1,254 @@
+.dd-page {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
+
+.dd-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dd-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--color);
+}
+
+.dd-sub {
+  font-size: 14px;
+  color: var(--color-muted, #94a3b8);
+  margin: 0;
+}
+
+.dd-profile-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary, #3b82f6);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--color-primary, #3b82f6);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.dd-profile-link:hover { background: rgba(59,130,246,0.08); }
+
+.dd-loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--color-muted, #94a3b8);
+  font-size: 14px;
+}
+
+/* ── Grid ── */
+.dd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.dd-card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.dd-card-full {
+  grid-column: 1 / -1;
+}
+
+.dd-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dd-card-top h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color);
+}
+
+.dd-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.dd-link {
+  font-size: 13px;
+  color: var(--color-primary, #3b82f6);
+  text-decoration: none;
+  font-weight: 500;
+}
+.dd-link:hover { text-decoration: underline; }
+
+.dd-muted {
+  font-size: 13px;
+  color: var(--color-muted, #94a3b8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dd-alert-red {
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.dd-btn-primary {
+  display: inline-block;
+  padding: 9px 20px;
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+}
+.dd-btn-primary:hover { opacity: 0.88; }
+
+/* ── Profile detail list ── */
+.dd-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dd-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.dd-detail-row span {
+  color: var(--color-muted, #94a3b8);
+  flex-shrink: 0;
+}
+
+.dd-detail-row strong {
+  color: var(--color, #111827);
+  text-align: right;
+}
+
+/* ── Empty state ── */
+.dd-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.dd-empty p {
+  font-size: 13px;
+  color: var(--color-muted, #94a3b8);
+  margin: 0;
+}
+
+/* ── Toggle ── */
+.dd-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dd-toggle-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: none;
+  color: var(--color-muted, #94a3b8);
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.dd-toggle-btn.active {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+.dd-toggle-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Stats ── */
+.dd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.dd-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  background: var(--bg-color, #f8fafc);
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.dd-stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color);
+}
+
+.dd-stat-label {
+  font-size: 12px;
+  color: var(--color-muted, #94a3b8);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .dd-grid { grid-template-columns: 1fr; }
+  .dd-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Tabs ── */
+.dd-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  margin-bottom: 24px;
+}
+
+.dd-tab {
+  padding: 10px 22px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted, #94a3b8);
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.dd-tab.active {
+  color: var(--color-primary, #3b82f6);
+  border-bottom-color: var(--color-primary, #3b82f6);
+  font-weight: 600;
+}
+
+.dd-tab:hover:not(.active) {
+  color: var(--color);
+}
