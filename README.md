@@ -103,16 +103,16 @@ Access Features Based on Role
 ---
 
 ## 📸 Screenshots
+![Home](https://github.com/AmitTHAKUR214/Heatth_Hive/raw/f73eb233abdba88ee5d4814a162e68c68e6b105d/Screenshot%20From%202026-03-31%2015-45-34.png)
 
-> *(Add your images below — this section boosts impact a LOT)*
+![Login](https://github.com/AmitTHAKUR214/Heatth_Hive/raw/9be78cca105ca909c7f1f4781132bc44f50459f4/Screenshot%20From%202026-01-16%2023-40-20.png)
 
-```id="img1"
-![Home](https://github.com/AmitTHAKUR214/Heatth_Hive/blob/f73eb233abdba88ee5d4814a162e68c68e6b105d/Screenshot%20From%202026-03-31%2015-45-34.png)
-![Login](https://github.com/AmitTHAKUR214/Heatth_Hive/blob/9be78cca105ca909c7f1f4781132bc44f50459f4/Screenshot%20From%202026-01-16%2023-40-20.png)
-![Dashboard](https://github.com/AmitTHAKUR214/Heatth_Hive/blob/9be78cca105ca909c7f1f4781132bc44f50459f4/Screenshot%20From%202026-03-31%2015-49-28.png)
-![Q&A](https://github.com/AmitTHAKUR214/Heatth_Hive/blob/222724cad51583298b3f61cc6d7790fe1aecc074/Screenshot%20From%202026-01-05%2010-01-38.png)
-![Inventory](https://github.com/AmitTHAKUR214/Heatth_Hive/blob/2d0c7afdd0d6addab220a8e88790dddd6c9e3cd7/Screenshot%20From%202026-03-31%2015-48-25.png)
-```
+![Dashboard](https://github.com/AmitTHAKUR214/Heatth_Hive/raw/9be78cca105ca909c7f1f4781132bc44f50459f4/Screenshot%20From%202026-03-31%2015-49-28.png)
+
+![Q&A](https://github.com/AmitTHAKUR214/Heatth_Hive/raw/222724cad51583298b3f61cc6d7790fe1aecc074/Screenshot%20From%202026-01-05%2010-01-38.png)
+
+![Inventory](https://github.com/AmitTHAKUR214/Heatth_Hive/raw/2d0c7afdd0d6addab220a8e88790dddd6c9e3cd7/Screenshot%20From%202026-03-31%2015-48-25.png)
+
 
 ---
 
